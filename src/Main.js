@@ -1,6 +1,12 @@
+import {Container} from "react-bootstrap"
+import Button from 'react-bootstrap/Button'
+
 const Main = () => {
   return (
-    <main>Main</main>
+    <Container as ="main" fluid>
+Main
+<Button variant="danger">Click</Button>
+    </Container>
   )
 }
 
