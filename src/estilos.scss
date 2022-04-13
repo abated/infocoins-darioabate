@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(186, 186, 213);
+}
+
+.nav {
+    &__list {
+        list-style: none;
+        &--link{
+            color: red;  
+        }
+    }
+  
+    
+}
+
+
+.header{
+    text-align: center;
+}
