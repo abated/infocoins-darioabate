@@ -1,4 +1,4 @@
-import NavBar from "./NavBar"
+import NavBar from "./components/NavBar"
 const Footer = () => {
     return    (  <footer>
         <p>Contacto</p>

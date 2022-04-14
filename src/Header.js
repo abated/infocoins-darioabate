@@ -1,4 +1,4 @@
-import NavBar from "./NavBar"
+import NavBar from "./components/NavBar"
 const Header = () => {
     return    (  <header className="header">
     <h1 className="header__titulo">InfoCoins</h1>
