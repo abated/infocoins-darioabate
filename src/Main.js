@@ -1,12 +1,17 @@
-import {Container} from "react-bootstrap"
-import Button from 'react-bootstrap/Button'
-
-const Main = () => {
+const Main = (props) => {
+  console.log(props)
+  // const children = props.children
+  // const {children:children} = props
+  const {children,nombre} = props
   return (
-    <Container as ="main" fluid>
-Main
-<Button variant="danger">Click</Button>
-    </Container>
+    
+<main>
+ main
+ bienvenido {props.nombre} {nombre}
+ {children}
+ {props.children}
+
+</main>
   )
 }
 
