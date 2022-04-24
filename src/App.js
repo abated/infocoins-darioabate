@@ -4,12 +4,12 @@ import Main from "./Main"
 import ItemListContainer from "./components/ItemListContainer"
 
 
-const App = (greeting) => {
+const App = () => {
     return <>
     <Header/>
+    <ItemListContainer greeting="Bienvenidos a InfoCoins"/>
     <Main nombre="Horacio">
       <p>Hola mundo</p>
-    <ItemListContainer/>
     </Main>
     <Footer/>
     </>

@@ -1,4 +1,3 @@
-import ItemListContainer from "./components/ItemListContainer"
 import NavBar from "./components/NavBar"
 const Header = () => {
     return    (  <header className="header">
@@ -7,7 +6,6 @@ const Header = () => {
  apellido="Gomez"
  footer={false}
  />
- <ItemListContainer/>
 </header>
 )
 }
