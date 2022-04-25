@@ -7,12 +7,10 @@ import ItemListContainer from "./components/ItemListContainer"
 const App = () => {
     return <>
     <Header/>
-    <ItemListContainer greeting="Bienvenidos a InfoCoins"/>
-    <Main nombre="Horacio">
+    <Main/> nombre="Horacio"
       <p>Hola mundo</p>
-    </Main>
+      <ItemListContainer greeting="Bienvenidos a InfoCoins"/>
     <Footer/>
     </>
   }
-
   export default App
