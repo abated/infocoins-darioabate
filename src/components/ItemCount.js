@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 const ItemCount = ({initial,stock,onAdd}) => {
-
+    useEffect(() => {
+        console.log("hubo un efecto")
+    })
 
     const [contador,setContador] = useState(initial)
+
    
 
     // const resultado2 = useState(5)
