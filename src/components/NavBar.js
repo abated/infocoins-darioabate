@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
 
 const NavBar = (props) => {
@@ -5,9 +6,9 @@ const NavBar = (props) => {
     return (
       <nav className="nav">
         <ul className="nav__list">
-          <li><a href="" className="nav__list--link">Inicio</a></li>
-          <li><a href="" className="nav__list--link">Mineria</a></li>
-          <li><a href="" className="nav__list--link">Retabilidad</a></li>
+          <li><Link to="/category/inicio" className="nav__list--link">inicio</Link></li>
+          <li><Link to="/category/mineria" className="nav__list--link">mineria</Link></li>
+          <li><Link to="/category/rentabilidad" className="nav__list--link">rentabilidad</Link></li>
         </ul> 
   </nav>
     )
@@ -15,10 +16,10 @@ const NavBar = (props) => {
   <nav className="nav">
   <ul className="nav__list">
   <CartWidget/>
-  <li><a href="" className="nav__list--link">{props.nombre} {props.apellido}</a></li>
-    <li><a href="" className="nav__list--link">Inicio</a></li>
-    <li><a href="" className="nav__list--link">Mineria</a></li>
-    <li><a href="" className="nav__list--link">Retabilidad</a></li>
+  <li><a to="" className="nav__list--link">{props.nombre} {props.apellido}</a></li>
+    <li><Link to="/category/inicio" className="nav__list--link">inicio</Link></li>
+    <li><Link to="/category/mineria" className="nav__list--link">mineria</Link></li>
+    <li><Link to="/category/rentabilidad" className="nav__list--link">rentabilidad</Link></li>
   </ul> 
 </nav>)
  }

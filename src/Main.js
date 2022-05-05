@@ -6,6 +6,7 @@ const Main = (props) => {
   return (
     
 <main>
+  
  main
  bienvenido {props.nombre} {nombre}
  {children}

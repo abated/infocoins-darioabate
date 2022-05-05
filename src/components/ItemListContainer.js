@@ -1,5 +1,6 @@
 import ItemList from "./ItemList"
 import {useEffect,useState} from "react"
+import { useParams } from "react-router-dom"
 
 const productosIniciales = [
   {
@@ -23,6 +24,8 @@ const productosIniciales = [
 const ItemListContainer = () => {
  const[cargando,setCargando] = useState(true)
  const [productos,setProductos] = useState([])
+const {category} = useParams()
+
 
   useEffect(() =>{
     const pedido = new Promise((res)=>{
@@ -40,7 +43,7 @@ const ItemListContainer = () => {
     setProductos(productosIniciales)
   })
 
-  },[])
+  },[category])
 
   if(cargando){
     return(
