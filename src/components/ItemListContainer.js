@@ -6,20 +6,25 @@ const productosIniciales = [
   {
     id:1,
     nombre:"Nvidia 3060",
-    precio:"400$"
+    precio:"400$",
+    category:"rentabilidad"
   },
   {
     id:2,
     nombre:"Nvidia 3090",
-    precio:"900$"
+    precio:"900$",
+    category:"mineria"
+
     
   },
   {
     id:3,
     nombre:"Amd  Radean 5700",
-    precio:"600$"
+    precio:"600$",
+    category:"mineria"
   }
 ]
+
 
 const ItemListContainer = () => {
  const[cargando,setCargando] = useState(true)
@@ -28,13 +33,14 @@ const {category} = useParams()
 
 
   useEffect(() =>{
+    if(category == undefined){
+
+    
     const pedido = new Promise((res)=>{
+      console.log("Cargando")
       setTimeout(()=>{
         res(productosIniciales)
       },2000 )
-
-      
-  
     })
 
   pedido.then(() =>{
@@ -43,7 +49,22 @@ const {category} = useParams()
     setProductos(productosIniciales)
   })
 
-  },[category])
+  }else{
+    const pedido = new Promise((res)=>{
+      console.log("Cargando")
+      setTimeout(()=>{
+        res(productosIniciales)
+      },2000 )
+    })
+.then(() =>{
+    setCargando(false)
+    setProductos(productosIniciales.filter((producto)=>{return producto.category == category}))
+  })
+  }
+}
+  ,[category])
+  
+
 
   if(cargando){
     return(

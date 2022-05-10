@@ -1,7 +1,6 @@
 import {useEffect,useState} from "react"
 import ItemDetail from "./ItemDetail"
 
-
 const item = 
     {
       titulo:"nvidia3060",
@@ -10,9 +9,7 @@ const item =
       
     }
 
-  
 const ItemDetailContainer = () => {
-
     const [cargando,setCargando] = useState(true)
     const [productos,setProductos] = useState({})
 
