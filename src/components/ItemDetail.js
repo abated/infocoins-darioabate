@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom"
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useContext} from 'react'
 import ItemCount from './ItemCount'
+import { contexto } from "./CartContext"
 const ItemDetail = ({item}) => {
 
-  const [cantidadProductos,setCantidadProductos] = useState('')
+  const [cantidadProductos,setCantidadProductos] = useState(0)
   const [mostrar,setMostrar] = useState(true)
-
-  const onAdd = (e) => {
-    setCantidadProductos(e)
+  const {agregarProducto} = useContext(contexto)
+  const onAdd = (cantidad) => {
+    setCantidadProductos(cantidad)
+    agregarProducto(item,cantidadProductos)
     setMostrar(false)
   }
   useEffect(() =>{
@@ -17,7 +19,7 @@ if(mostrar) {
   return (
     <div>
     <p>{item.category}</p>
-      <ItemCount initial={0} stock={5} onAdd={onAdd}/>
+      <ItemCount initial={1} stock={5} onAdd={onAdd}/>
     <p>cantidad: {cantidadProductos}</p>
     </div>
   )

@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react"
-const ItemCount = ({initial,stock,onAdd,onClick}) => {
+const ItemCount = ({initial,stock,onAdd}) => {
   
     useEffect(() => {
         console.log("hubo un efecto")
@@ -7,9 +7,9 @@ const ItemCount = ({initial,stock,onAdd,onClick}) => {
 
     const [contador,setContador] = useState(initial)
 
-   const handleConfirmar = () => {
-    onClick(contador)
-   }
+//    const handleConfirmar = () => {
+//     onClick(contador)
+//    }
 
     // const resultado2 = useState(5)
     // const stock = resultado2[0]
@@ -44,7 +44,7 @@ const agregarCarrito = () => {
 <button onClick={aumentarContador} className="botonEstilo">+</button>
 <button onClick={disminuirContador} className="botonEstilo">-</button>
 <button onClick={agregarCarrito}>Agregar al carrito</button>
-<button onClick={handleConfirmar}>confirmar</button>
+
 
 
     </div>

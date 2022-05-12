@@ -1,6 +1,14 @@
+import {useContext} from "react"
+import { contexto } from "./CartContext"
+
+
 const Cart = () => {
+    const {precio_total,carrito,vaciarCarrito} = useContext(contexto)
   return (
-    <div>cart </div>
+    <div>
+        <h1>Carrito</h1>
+        <h2>Precio Total : {precio_total}</h2>
+         </div>
   )
 }
 

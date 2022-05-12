@@ -5,10 +5,15 @@ import Main from "./Main"
 import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import MicustomProvider from "./components/CartContext"
+
 
 
 const App = () => {
-    return <BrowserRouter>
+  
+    return ( 
+      <MicustomProvider>
+      <BrowserRouter>
     <Header/>
     <Main/>
     <Routes>
@@ -20,5 +25,6 @@ const App = () => {
 
     <Footer/>
     </BrowserRouter>
-  }
+    </MicustomProvider>
+  )}
   export default App
