@@ -6,34 +6,28 @@ const { Provider } = contexto;
 
 const MicustomProvider = ({children}) => {
     const [carrito,setCarrito] = useState([])
-    
 
-    const [cantidad_total,setCantidad_total] = useState(0)
-    const [precio_total,setPrecio_total] = useState(0)
+    const [cantidad_total,setCantidad_total] = useState(1)
+    const [precio_total,setPrecio_total] = useState(1)
 
-const agregarProducto = (nombre,cantidad) => {
-    if(estaEnCarrito(nombre.id)){
-        const nuevoCarrito = [carrito];
-        for (const element of nuevoCarrito ){
-            if(element.nombre.id == nombre.id ){
-                nombre.cantidad = nombre.cantidad + cantidad
-            }
-        }
-        setCarrito(nuevoCarrito)
-    }else{
-        setCarrito([
-            carrito,
-            {
-                nombre:nombre,
-                cantidad:cantidad
-            }
-        ])
+const agregarProducto = (cantidadProductos,item) => {
+    console.log(item)
+   
+    if(estaEnCarrito(item.id)){
+        console.log("el producto ya esta en el carrito")
+    }else {
+        setCantidad_total(cantidadProductos + item.cantidad)
+        setPrecio_total(precio_total + item.precio)
+        setCarrito([...carrito,item])
+       
     }
-
+ 
+   
 }
-
+console.log(cantidad_total)
 const eliminarProducto = (id) => {
-
+    const nuevoCarrito = [carrito].map(element => element.id !== id);
+    setCarrito(nuevoCarrito);
 }
 const vaciarProducto = () =>{
     setCarrito([])
@@ -43,6 +37,7 @@ const estaEnCarrito = (id) => {
     return carrito.find(elemento => elemento.id === id)
 
 }
+console.log("Cambio de estado")
 
     const valorDelContexto = {
         cantidad_total : cantidad_total,

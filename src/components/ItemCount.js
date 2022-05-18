@@ -38,7 +38,7 @@ const agregarCarrito = () => {
   return (
       
     <div>
-        <p className="producto">Nvidia 3060</p>
+        
         <p>Stock {stock}</p>
         <p>Cantidad : {contador}</p>
 <button onClick={aumentarContador} className="botonEstilo">+</button>

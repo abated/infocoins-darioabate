@@ -12,8 +12,8 @@ import MicustomProvider from "./components/CartContext"
 const App = () => {
   
     return ( 
-      <MicustomProvider>
       <BrowserRouter>
+      <MicustomProvider>
     <Header/>
     <Main/>
     <Routes>
@@ -24,7 +24,7 @@ const App = () => {
   </Routes>
 
     <Footer/>
-    </BrowserRouter>
     </MicustomProvider>
+    </BrowserRouter>
   )}
   export default App
