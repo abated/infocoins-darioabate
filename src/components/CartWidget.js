@@ -4,7 +4,7 @@ import { contexto } from "./CartContext"
 
 const CartWidget = () => {
 
-  const {cantidad_total} = useContext(contexto)
+  const {cantidad_total,precio_total} = useContext(contexto)
   
   return (
     <Link to="/cart">    <span class="material-icons carrito">

@@ -6,35 +6,47 @@ const { Provider } = contexto;
 
 const MicustomProvider = ({children}) => {
     const [carrito,setCarrito] = useState([])
+    
 
-    const [cantidad_total,setCantidad_total] = useState(1)
-    const [precio_total,setPrecio_total] = useState(1)
+    const [cantidad_total,setCantidad_total] = useState(0)
+    const [precio_total,setPrecio_total] = useState(0)
 
-const agregarProducto = (cantidadProductos,item) => {
-    console.log(item)
+const agregarProducto = (cantidadProductos,producto) => {
+    console.log(producto.id)
+    console.log(cantidadProductos)
    
-    if(estaEnCarrito(item.id)){
+    if(estaEnCarrito(producto.id)){
         console.log("el producto ya esta en el carrito")
+     
+
     }else {
-        setCantidad_total(cantidadProductos + item.cantidad)
-        setPrecio_total(precio_total + item.precio)
-        setCarrito([...carrito,item])
+        setCantidad_total(cantidad_total + cantidadProductos)
+        setPrecio_total(precio_total + producto.precio)
+        setCarrito([...carrito,producto])
+        
        
     }
  
    
 }
+
+
+console.log(precio_total)
 console.log(cantidad_total)
+console.log([carrito[0]])
+console.log([carrito[1]])
+console.log([carrito[2]])
+
+const estaEnCarrito = (id) => {
+    return carrito.find(elemento => elemento.id == id)
+  
+
+}
 const eliminarProducto = (id) => {
-    const nuevoCarrito = [carrito].map(element => element.id !== id);
-    setCarrito(nuevoCarrito);
+    setCarrito([carrito].filter(producto=> producto.id !== id))
 }
 const vaciarProducto = () =>{
     setCarrito([])
-
-}
-const estaEnCarrito = (id) => {
-    return carrito.find(elemento => elemento.id === id)
 
 }
 console.log("Cambio de estado")

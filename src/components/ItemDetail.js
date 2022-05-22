@@ -5,7 +5,7 @@ import { contexto } from "./CartContext"
 import { db } from "./firebase"
 
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({producto}) => {
 
   const [cantidadProductos,setCantidadProductos] = useState(0)
   const [mostrar,setMostrar] = useState(true)
@@ -13,13 +13,11 @@ const ItemDetail = ({item}) => {
 
   const onAdd = (cantidadProductos) => {
     setCantidadProductos(cantidadProductos)
+    agregarProducto(cantidadProductos,producto)
     console.log(cantidadProductos)
-    agregarProducto(cantidadProductos,item)
     setMostrar(false)
   }
-  const Click = () => {
-    agregarProducto(cantidadProductos,item)
-   } 
+
   useEffect(() =>{
   },[cantidadProductos])
   
@@ -36,7 +34,7 @@ if(mostrar) {
 }else {
   return(
     <div>
-     <Link to="/cart"> <button onClick={Click}>Terminar mi compra</button></Link> 
+     <Link to="/cart"> <button>Terminar mi compra</button></Link> 
           <p>cantidad: {cantidadProductos}  </p>
 
           
