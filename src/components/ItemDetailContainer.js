@@ -13,28 +13,21 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
     useEffect(() =>{
       const productosCollection = collection(db,'productos')
-      const consulta = getDocs(productosCollection)
-      console.log(consulta)
+      const resultadoDelDoC = doc(productosCollection,id)
+      const consulta = getDoc(resultadoDelDoC)
       consulta
       .then((resultado) => {
-        // console.log(resultado.docs)
-        const productos =  resultado.docs.map(doc=> {
-          const productoConId = doc.data()
-          productoConId.id = doc.id
-          return productoConId
-        }
-  
-        )
-        setProductos(productos.find((producto)=>producto.id == id))
+        console.log(resultado.data)
+        setProductos(resultado.data())
         setCargando(false)
       })
       .catch((error) => {
+        console.log(error)
       })
       .finally(() =>{
 
       })
-  }
-  
+}
   ,[])
 
       if(cargando){

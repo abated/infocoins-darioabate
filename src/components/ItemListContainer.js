@@ -2,7 +2,7 @@ import ItemList from "./ItemList"
 import {useEffect,useState} from "react"
 import { useParams } from "react-router-dom"
 import { db } from "./firebase"
-import { collection, getDoc, doc, getDocs, addDoc,query } from "firebase/firestore"
+import { collection, getDoc, doc, getDocs, addDoc,query, where } from "firebase/firestore"
 
 
 
@@ -48,7 +48,8 @@ const {category} = useParams()
   }else{
     
     const productosCollection = collection(db,'productos')
-    const consulta = getDocs(productosCollection)
+    const queryDeFirestore = query(productosCollection,where("category","==",category))
+    const consulta = getDocs(queryDeFirestore)
     console.log(consulta)
     consulta
     .then((resultado) => {
@@ -60,14 +61,13 @@ const {category} = useParams()
       }
 
       )
-      setProductos(productos.filter((producto)=>{return producto.category == category}))
+      setProductos(productos)
       setCargando(false)
     })
     .catch((error) => {
+      console.log(error)
     })
-    .finally(() =>{
 
-    })
 }
 }
 ,[category])
