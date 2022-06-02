@@ -5,44 +5,102 @@
 }
 
 
-html, body, #root {
+html,
+body,
+#root {
     height: 100vh;
+
 }
-#root{
+
+#root {
     display: flex;
     flex-direction: column;
 
 }
 
-#root > main {
+#root>main {
     flex-grow: 1;
 
 }
 
-#root > main, #root > header , #root > footer {
+#root>main,
+#root>header,
+#root>footer {
     padding: 1rem;
 }
 
-#root > header {
+#root>header,
+footer {
     background-color: yellow;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px;
+    height: 150px;
+    padding: 50px;
+
 }
 
+#root>footer {
+    margin-top: 20px;
+}
+
+.contador {
+    padding: 1rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: solid, 3px;
+    text-align: center;
+    align-items: center;
+
+    &__nombre {
+        padding-bottom: 5px;
+        color: rgb(41, 16, 16);
+    }
+
+    img {
+        width: 300px;
+    }
+
+    p {
+        color: #2372b7;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+}
+
+.contador__imagenes {
+    padding: 1rem;
+    margin: 3rem;
+    border: 1px solid black;
+    align-items: center;
+
+}
 
 .nav {
-  display: flex;
+    display: flex;
+
     &__list {
+        display: flex;
         list-style: none;
-        flex-direction: column;
-        
-        &--link{
-            color: red;  
+        text-decoration: none;
+        flex-direction: row;
+        font-size: 20px;
+
+        &--link {
+            color: red;
+            padding: 5px;
+            margin: 5px;
         }
     }
-  
+
+}
+
+.imgCarrosuel {
+    width: 100%;
+    height: 300px;
+    padding-top: 2px;
+    padding-bottom: 2rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
 }
 
 .carrito {
@@ -52,20 +110,83 @@ html, body, #root {
     font-size: 30px;
 }
 
+@media (max-width: 600px) {
+    .imgCarrosuel {
+        padding: 0;
+    }
+}
 
 .botonEstilo {
-    color: blue;
-    font-size: 20px;
-    padding: 10px;
-    margin: 10px;
+    color: #363670;
+    font-size: 13px;
+    padding: 13px;
+    margin: 7px;
 }
+
 .producto {
     font-size: 20px;
-    padding: 30px;
+    padding: 20px;
 }
-.rojo{
-    color: red;
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    margin: 10px;
 }
-.negro {
-    color: black;
+
+.card__texto {
+    text-align: start;
+
+    li {
+        color: #2372b7;
+    }
+
+
+}
+
+.card__precio {
+    p {
+        color: #060a1e;
+        font-size: 30px;
+        font-style: oblique;
+    }
+}
+
+.card {
+    padding: 1rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border-radius: 3px;
+    text-align: center;
+
+    &__imagen {
+        display: flex;
+    }
+
+    &__VerMas {
+        color: rgb(225, 255, 0);
+
+    }
+
+    &__nombre {
+        padding-bottom: 5px;
+        color: rgb(41, 16, 16);
+    }
+
+    img {
+        width: 260px;
+        height: 250px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(237 237 237);
+        padding: 5px;
+
+    }
 }

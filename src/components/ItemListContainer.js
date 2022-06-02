@@ -1,89 +1,61 @@
 import ItemList from "./ItemList"
-import {useEffect,useState} from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { db } from "./firebase"
-import { collection, getDoc, doc, getDocs, addDoc,query, where } from "firebase/firestore"
+import { collection, getDocs, query, where } from "firebase/firestore"
 
 
 
 const ItemListContainer = () => {
- const[cargando,setCargando] = useState(true)
- const [productos,setProductos] = useState([])
-const {category} = useParams()
-
-
-  useEffect(() =>{
-
- 
-
-    
-
-
-    
-    if(category == undefined){
-
-    
-      const productosCollection = collection(db,'productos')
+  const [cargando, setCargando] = useState(true)
+  const [productos, setProductos] = useState([])
+  const { category } = useParams()
+  useEffect(() => {
+    if (category == undefined) {
+      const productosCollection = collection(db, 'productos')
       const consulta = getDocs(productosCollection)
-      console.log(consulta)
       consulta
-      .then((resultado) => {
-        // console.log(resultado.docs)
-        const productos =  resultado.docs.map(doc=> {
-          const productoConId = doc.data()
-          productoConId.id = doc.id
-          return productoConId
-        }
-  
-        )
-        setProductos(productos)
-        setCargando(false)
-      })
-      .catch((error) => {
-      })
-      .finally(() =>{
-  
-      })
+        .then((resultado) => {
+          console.log(resultado.docs)
+          const productos = resultado.docs.map(doc => {
+            const productoConId = doc.data()
+            productoConId.id = doc.id
+            return productoConId
+          }
+          )
+          setProductos(productos)
+          setCargando(false)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+        .finally(() => {
+        })
 
-  }else{
-    
-    const productosCollection = collection(db,'productos')
-    const queryDeFirestore = query(productosCollection,where("category","==",category))
-    const consulta = getDocs(queryDeFirestore)
-    console.log(consulta)
-    consulta
-    .then((resultado) => {
-      // console.log(resultado.docs)
-      const productos =  resultado.docs.map(doc=> {
-        const productoConId = doc.data()
-        productoConId.id = doc.id
-        return productoConId
-      }
-
-      )
-      setProductos(productos)
-      setCargando(false)
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-
-}
-}
-,[category])
-
-  
+    } else {
+      const productosCollection = collection(db, 'productos')
+      const queryDeFirestore = query(productosCollection, where("category", "==", category))
+      const consulta = getDocs(queryDeFirestore)
+      consulta
+        .then((resultado) => {
+          const productos = resultado.docs.map(doc => {
+            const productoConId = doc.data()
+            productoConId.id = doc.id
+            return productoConId
+          })
+          setProductos(productos)
+          setCargando(false)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+  }
+    , [category])
   return (
     <>
-  {cargando ?  <p>Cargando</p> : <ItemList productos={productos}/> }
-    
-      
+      {cargando ? <p>Cargando</p> : <ItemList productos={productos} />}
     </>
-      
-    
   )
-
-  
 }
-
 export default ItemListContainer
