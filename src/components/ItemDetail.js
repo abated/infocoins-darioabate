@@ -12,6 +12,7 @@ const ItemDetail = ({ producto }) => {
     producto.cantidad = cantidadProductos
     setMostrar(false)
   }
+
   const clickAgregarProducto = () => {
     agregarProducto(producto)
   }

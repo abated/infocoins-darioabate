@@ -11,8 +11,8 @@ const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const { category } = useParams()
   useEffect(() => {
+    const productosCollection = collection(db, 'productos')
     if (category == undefined) {
-      const productosCollection = collection(db, 'productos')
       const consulta = getDocs(productosCollection)
       consulta
         .then((resultado) => {
@@ -33,7 +33,6 @@ const ItemListContainer = () => {
         })
 
     } else {
-      const productosCollection = collection(db, 'productos')
       const queryDeFirestore = query(productosCollection, where("category", "==", category))
       const consulta = getDocs(queryDeFirestore)
       consulta
