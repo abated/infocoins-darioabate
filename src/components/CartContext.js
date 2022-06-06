@@ -8,7 +8,6 @@ const MicustomProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([])
     const [cantidad_total, setCantidad_total] = useState(0)
     const [precio_total, setPrecio_total] = useState(0)
-
     const agregarProducto = (producto) => {
         if (estaEnCarrito(producto.id)) {
             const nuevoCarrito = [...carrito]
@@ -46,7 +45,6 @@ const MicustomProvider = ({ children }) => {
         eliminarProducto,
         vaciarProducto,
         estaEnCarrito
-
     }
     return (
         <Provider value={valorDelContexto}>

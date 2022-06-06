@@ -30,26 +30,26 @@ Es un E-commerce para informacion y venta de placas de video para mineria de cri
  # Comentarios adicionales de componentes/funciones-metodos
 
    1. En el componente ItemDetail:
-  * Funcion onAdd trae la cantidad selecionada por el usuario 
+  * Funcion onAdd trae la cantidad selecionada por el usuario desde el ItemCount. 
   * Funcion AgregarProducto se pasa por contexto hacia el Cart
 
   2. En el componente ItemDetailContainer:
-  * Funcion useParams() Se utilizada para filtrar por ID los items en la base de datos(firebase).
+  * Funcion useParams() es utilizada para recuperar el ID que viene por parametro de la url.
 
   3. En el componente ItemListContainer:
- * Funciion UseParams() se utilizada para filtrar por categorias con los ID de parametros.
+ * Funcion UseParams() se utilizada para recuperar la categoria que viene por parametro en la url.
  * import { collection, getDoc, doc } from "firebase/firestore" Trae de la base de datos los productos para el container.
 
  4. En el componente CartContext:
- * la funcion agregarProducto se le pasa el parametro del ItemDetail(producto) luego se hace un if para realizar logica de agregado de producto al carrito.
+ * la funcion agregarProducto recibe por parametro un producto y se guarda en un array dentro del componente
 
  5. Fisebase.js
  * const firebaseConfig :  Configuracion de firebase
- *  Initialize Firebase
-const app = initializeApp(firebaseConfig);
+ *  inicializacion de Firebase : const app = initializeApp(firebaseConfig);
+
 
 6. En el componente NavBar:
-If alternario si footer es true o false retorna "nombre"
+If ternario si footer es true o false retorna "nombre"
 
 
 # Video 

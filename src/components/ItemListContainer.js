@@ -4,15 +4,13 @@ import { useParams } from "react-router-dom"
 import { db } from "./firebase"
 import { collection, getDocs, query, where } from "firebase/firestore"
 
-
-
 const ItemListContainer = () => {
   const [cargando, setCargando] = useState(true)
   const [productos, setProductos] = useState([])
   const { category } = useParams()
   useEffect(() => {
     const productosCollection = collection(db, 'productos')
-    if (category == undefined) {
+    if (category === undefined) {
       const consulta = getDocs(productosCollection)
       consulta
         .then((resultado) => {
