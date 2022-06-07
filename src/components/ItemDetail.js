@@ -23,7 +23,7 @@ const ItemDetail = ({ producto }) => {
     return (
       <div>
         <ItemCount initial={1} stock={10} onAdd={onAdd} producto={producto} />
-        <p>cantidad: {cantidadProductos}</p>
+
       </div>
     )
   } else {

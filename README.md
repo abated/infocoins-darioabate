@@ -53,7 +53,7 @@ If ternario si footer es true o false retorna "nombre"
 
 
 # Video 
-* [Video Proyecto Final](https://drive.google.com/drive/folders/1Hx0jycx0dQFjgDqdgfhspsO6G_oeEHYh?usp=sharing)
+* [Video Proyecto Final](https://drive.google.com/file/d/1KpHxjgINIX1xlElWVZ1FXSQxkydl3zOI/view?usp=sharing)
 
 
 

@@ -1,4 +1,4 @@
-import Cart from "./components/Carrito/Cart"
+import Cart from "./components/Cart"
 import Header from "./Header"
 import Footer from "./Footer"
 import Main from "./Main"

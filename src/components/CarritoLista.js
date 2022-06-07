@@ -6,8 +6,7 @@ const CarritoLista = ({ carrito, eliminarProducto }) => {
       {carrito.map(producto => {
         return <CarritoItem key={producto.id} producto={producto} eliminarProducto={eliminarProducto} />
       })}
-      </ul>
-     
+    </ul>
   )
 }
 export default CarritoLista

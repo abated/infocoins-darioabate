@@ -1,8 +1,8 @@
-import { useContext, useState,useRef  } from "react"
+import { useContext, useState, useRef } from "react"
 import { Link } from "react-router-dom"
 import CarritoLista from "./CarritoLista"
-import { contexto } from "../CartContext"
-import { db } from "../firebase"
+import { contexto } from "./CartContext"
+import { db } from "./firebase"
 import { collection, addDoc } from "firebase/firestore"
 
 
@@ -14,10 +14,8 @@ const Cart = () => {
   const nameInput = useRef(null);
   const telInput = useRef(null);
   const emailInput = useRef(null);
-  
   const handleClick = () => {
     if (nombre === '') {
-     
       nameInput.current.focus()
       return false
     }
@@ -40,9 +38,7 @@ const Cart = () => {
 
   const handleChange = (e) => {
     setNombre(e.target.value)
-
   }
-
   const handleChange2 = (e) => {
     setTelefono(e.target.value)
   }
@@ -92,8 +88,8 @@ const Cart = () => {
               <input type="email" placeholder="Correo Electronico" ref={emailInput} onChange={handleChange3} />
             </form>
             <button onClick={handleClick}> Confirmar Datos del Comprador</button></div> </div> : <div></div>}
-        {usuarios.length && carrito.length > 0 ? <div className="finalizarCompra"> 
-        <button className="finalizarCompra" onClick={guardarCompra}>Finalizar Compra </button></div> : <div></div>}
+        {usuarios.length && carrito.length > 0 ? <div className="finalizarCompra">
+          <button className="finalizarCompra" onClick={guardarCompra}>Finalizar Compra </button></div> : <div></div>}
         {idCompra ? <h3>compra guardada con el id {idCompra}</h3> : ""}
       </div>
 

@@ -27,7 +27,7 @@ const MicustomProvider = ({ children }) => {
         return carrito.find(elemento => elemento.id === id)
     }
     const eliminarProducto = (id) => {
-        setCarrito(carrito.filter(producto => producto.id != id))
+        setCarrito(carrito.filter(producto => producto.id !== id))
         const productoEliminado = carrito.find(item => item.id === id);
         setCantidad_total(cantidad_total - productoEliminado.cantidad)
         setPrecio_total(precio_total - (productoEliminado.cantidad * productoEliminado.precio))

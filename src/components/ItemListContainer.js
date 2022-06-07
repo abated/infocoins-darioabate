@@ -14,7 +14,6 @@ const ItemListContainer = () => {
       const consulta = getDocs(productosCollection)
       consulta
         .then((resultado) => {
-          console.log(resultado.docs)
           const productos = resultado.docs.map(doc => {
             const productoConId = doc.data()
             productoConId.id = doc.id

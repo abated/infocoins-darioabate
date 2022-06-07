@@ -1,10 +1,9 @@
-const CarritoItem = ({ producto, eliminarProducto,usuario }) => {
+const CarritoItem = ({ producto, eliminarProducto, usuario }) => {
   const eliminar = () => {
     eliminarProducto(producto.id)
   }
   return (
     <div>
-  
       <img className="imagenCarritoItem" src={producto.imagen} alt="imagenCarrito" />
       <h3>nombre del producto: {producto.nombre}</h3>
       <h3>cantidad del producto: {producto.cantidad}</h3>

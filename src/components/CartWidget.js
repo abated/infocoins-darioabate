@@ -9,12 +9,12 @@ const CartWidget = () => {
 
   return (
     <div>
-    <Link to="/cart">    <span className="material-icons carrito">
-      add_shopping_cart
-    </span>
-      {cantidad_total}
-    
-    </Link>
+      <Link to="/cart">    <span className="material-icons carrito">
+        add_shopping_cart
+      </span>
+        {cantidad_total}
+
+      </Link>
     </div>
 
   )

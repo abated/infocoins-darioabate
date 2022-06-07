@@ -22,7 +22,7 @@ const ItemCount = ({ initial, stock, onAdd, producto }) => {
         <p>Precio: {producto.precio}</p>
       </div>
       <div className="contador__imagenes">
-        <img src={producto.imagen} />
+        <img src={producto.imagen} alt="imagenContador" />
         <p>Stock {stock}</p>
         <p>Cantidad : {contador}</p>
         <div>
