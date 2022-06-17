@@ -5,15 +5,16 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBM41XbCUlW7i82aoDtO5S7ZZIQcnktfjc",
-  authDomain: "infocoins-b00b5.firebaseapp.com",
-  projectId: "infocoins-b00b5",
-  storageBucket: "infocoins-b00b5.appspot.com",
-  messagingSenderId: "263974939596",
-  appId: "1:263974939596:web:ab15be8d6b105e69594b69"
+  apiKey: "AIzaSyBNFo5IuYJScmR-gYJrLQPUayqPNb8Joak",
+  authDomain: "infocoins2.firebaseapp.com",
+  projectId: "infocoins2",
+  storageBucket: "infocoins2.appspot.com",
+  messagingSenderId: "486483122137",
+  appId: "1:486483122137:web:7b462c816b4e5416142bc8",
+  measurementId: "G-FQ86C1LQKP"
 };
-
 
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);
+

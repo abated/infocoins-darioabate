@@ -25,6 +25,7 @@ Es un E-commerce para informacion y venta de placas de video para mineria de cri
 * Una vez instalado en la consola de comandos(CMD) nos ubicamos en la carpeta del proyecto y ejecutamos los siguientes codigos: 
  1. "npm install create-react-app" y esperamos que termine la instalacion
  2. "npm install react-bootstrap bootstrap"
+ 3. "npm install firebase"
  * Como ultimo paso ejecutamos "npm start" y el proyecto se iniciara.
 
  # Comentarios adicionales de componentes/funciones-metodos
